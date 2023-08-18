@@ -41,11 +41,11 @@ const CharList = (props) => {
             ended = true;
         }
 
-        // Щоб зберігати послідовність зміни стейту, викликаємо колбек
-        setCharList( charList => [...charList, ...newCharList]);
-        setNewItemLoading( newItemLoading => false);
-        setOffset( offset => offset + 9);
-        setCharEnded( charEnded => ended);
+        // В реакті 18 колбек не потрібен
+        setCharList( [...charList, ...newCharList]);
+        setNewItemLoading( false);
+        setOffset( offset + 9);
+        setCharEnded( ended);
     }
 
     function renderItems(arr) {
