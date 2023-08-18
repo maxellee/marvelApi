@@ -11,7 +11,7 @@ import xMen from '../../resources/img/x-men.png';
 const ComicsList = () => {
 
     const [comicsList, setComicsList] = useState([]);
-    const [offset, setOffset] = useState(4);
+    const [offset, setOffset] = useState(0);
     const [newComicsLoading, setNewComicsLoading] = useState(false);
     const [comicsEnded, setComicsEnded] = useState(false);
 
@@ -33,10 +33,10 @@ const ComicsList = () => {
             ended = true;
         }
 
-        setComicsList( comicsList => [...comicsList, ...newComicsList]);
-        setNewComicsLoading( newComicsLoading => false);
-        setOffset( offset => offset + 8);
-        setComicsEnded( comicsEnded => ended);
+        setComicsList( [...comicsList, ...newComicsList]);
+        setNewComicsLoading( false);
+        setOffset( offset + 8);
+        setComicsEnded( ended);
     }
 
     function renderItems(arr) {

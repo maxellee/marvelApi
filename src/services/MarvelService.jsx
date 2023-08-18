@@ -5,7 +5,7 @@ const useMarvelService = () => {
     const _apiBase = 'https://gateway.marvel.com:443/v1/public/';
     const _apiKey = 'apikey=74e98b24f6b9f6e049cdcb6915b44ba7';
     let _baseOffset = 210;
-    let _comicsOffset = 4;
+    // let _comicsOffset = 20;
     
 
     const getAllCharacters = async (offset = _baseOffset) => {
@@ -19,8 +19,8 @@ const useMarvelService = () => {
         return _transformCharacter(res.data.results[0]);
     }
 
-    const getAllComics = async(offset = _comicsOffset) => {
-        const res = await request(`${_apiBase}comics?limit=8^offset=${offset}&${_apiKey}`);
+    const getAllComics = async(offset = _baseOffset) => {
+        const res = await request(`${_apiBase}comics?limit=8&offset=${offset}&${_apiKey}`);
         return res.data.results.map(_tranformComics);
     }
     const _transformCharacter = (char) => {
