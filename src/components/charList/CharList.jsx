@@ -35,10 +35,6 @@ const CharList = (props) => {
         itemRefs.current[id].focus()
     }
 
-
-    const onCharListLoading = () => {
-    }
-
     const onCharListLoaded = (newCharList) => {
         let ended = false;
         if(newCharList.length < 9) {
@@ -86,14 +82,12 @@ const CharList = (props) => {
         return (
             <ul className="char__grid">
                 {items}
-                
+     
             </ul>
         )
     }
 
-
         const items = renderItems(charList);
-
         const errorMessage = error ? <ErrorMessage/> : null;
         const spinner = loading && !newItemLoading ? <Spinner/> : null;
 
