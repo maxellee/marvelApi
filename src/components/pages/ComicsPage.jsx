@@ -1,4 +1,3 @@
-import AppHeader from "../appHeader/AppHeader";
 import AppBanner from '../appBanner/AppBanner';
 import ComicsList from "../comicsList/ComicsList";
 
